@@ -186,7 +186,28 @@ p{color:var(--cream-3);}
 .photo-frame{border:1px solid var(--gold-border);border-radius:5px;overflow:hidden;background:var(--bg-alt);box-shadow:0 12px 32px rgba(0,0,0,0.35);}
 .photo-frame img{width:100%;height:auto;display:block;}
 .photo-solo{max-width:600px;margin:0 auto;}
-@media(max-width:760px){.photo-feature-inner{grid-template-columns:1fr;gap:28px;}}
+.photo-stack{display:grid;gap:18px;}
+.photo-gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:920px;margin:0 auto;align-items:start;}
+/* league accordion rows */
+.leagues{max-width:760px;}
+.league-row{border-bottom:1px solid var(--gold-border);}
+.league-row:first-child{border-top:1px solid var(--gold-border);}
+.league-bar{width:100%;background:transparent;border:none;cursor:pointer;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;}
+.league-bar h3{font-family:var(--display);font-size:17px;color:var(--cream);font-weight:700;margin:0;transition:color .2s;}
+.league-bar .time{font-size:12px;color:var(--gold);margin-top:5px;letter-spacing:.5px;}
+.league-bar:hover h3{color:var(--gold-light);}
+.league-chev{font-size:22px;color:var(--gold);font-weight:300;line-height:1;transition:transform .3s;flex-shrink:0;}
+.league-bar.open .league-chev{transform:rotate(45deg);}
+.league-drawer{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.league-drawer-in{padding:0 4px 24px;}
+@media(max-width:760px){.photo-feature-inner{grid-template-columns:1fr;gap:28px;}.photo-gallery{grid-template-columns:1fr;}}
+/* gallery page */
+.gallery-grid{column-count:3;column-gap:16px;max-width:1100px;margin:0 auto;}
+.gallery-grid figure{break-inside:avoid;margin:0 0 16px;border:1px solid var(--gold-border);border-radius:4px;overflow:hidden;background:var(--bg-alt);}
+.gallery-grid img{width:100%;height:auto;display:block;}
+.gallery-grid figcaption{font-size:12.5px;color:var(--cream-3);padding:10px 12px;font-style:italic;}
+@media(max-width:900px){.gallery-grid{column-count:2;}}
+@media(max-width:560px){.gallery-grid{column-count:1;}}
 
 /* footer */
 .footer{background:#040201;border-top:1px solid var(--gold-border);padding:60px 32px 36px;}

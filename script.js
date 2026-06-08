@@ -20,6 +20,16 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   });
 });
 
+// League rows (clickable tabs that reveal the live-table link)
+document.querySelectorAll('.league-bar').forEach(function(b){
+  b.addEventListener('click',function(){
+    var drawer=b.nextElementSibling;
+    var isOpen=b.classList.contains('open');
+    if(isOpen){b.classList.remove('open');b.setAttribute('aria-expanded','false');drawer.style.maxHeight=null;}
+    else{b.classList.add('open');b.setAttribute('aria-expanded','true');drawer.style.maxHeight=drawer.scrollHeight+'px';}
+  });
+});
+
 // Reveal on scroll
 var io=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
